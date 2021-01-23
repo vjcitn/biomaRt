@@ -6,6 +6,7 @@
 }
 
 .check_ensembl_ssl <- function() {
+  new_config <- httr::config(ssl_verifypeer = FALSE)
   for(i in seq_len(2)) {
     test <- try(.test_ensembl(), silent = TRUE)
     
